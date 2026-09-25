@@ -10,16 +10,17 @@ tools:context="com.emptyart.skatetrickscount.SkateSessActivity">
 
 <Spinner
     android:id="@+id/my_spinner"
+    style="@android:style/Widget.Spinner"
     android:entries="@array/skate_tricks"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" />
 
-<Button
-    android:id="@+id/my_button"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="10dip"
-    android:text="@string/btn_text"/>
+    <Button
+        android:id="@+id/my_button"
+        style="@android:style/Widget.Button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/btn_text" />
 
 </LinearLayout>
-
