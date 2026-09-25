@@ -1,7 +1,7 @@
 # SkateTricksCount
 
-Plain text tricks counter app
-the ollies are supposed to land on the next number
+Plain text tricks counter app,
+the ollies are supposed to land on the next number,
 increasing the skater intelligence if they figure it out before
 
 This wont help on counties were skateboarding is forbiden
@@ -10,8 +10,8 @@ This wont help on counties were skateboarding is forbiden
 Help me to buy my OneWheel https://onewheel.com/
 
 
-OneWheel streams all its info like the ODBII of the automotives
-so you can create your OneWheel mashup. 
+OneWheel streams all its info like the ODBII of the automotives,
+so you can create your OneWheel mashup streaming from its bluethoot. 
 
 
 For Aliens is better to have a OneWheel than an E-Bike because is
