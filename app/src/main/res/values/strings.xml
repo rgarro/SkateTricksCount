@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SkateTricksCount</string>
-    <string name="app_title">SkateTricksCount</string>
-    <string name="btn_text">GO</string>
+    <string name="app_title">Skate Tricks Counter</string>
+    <string name="btn_text">aad to count</string>
     <string-array name="skate_tricks">
         <item>Ollie</item>
         <item>Flip</item>
