@@ -35,7 +35,21 @@ public class OllieLanding extends Activity {
             skateTrick = getIntent().getStringExtra("skate_trick");
             Log.d("weather_url", skateTrick);
             Log.d("HERE", "we go! ..");
+            if(skateTrick=="Ollie"){
 
+            }
+            if(skateTrick=="Flip"){
+
+            }
+            if(skateTrick=="BackFlip"){
+
+            }
+            if(skateTrick=="FrontSide180"){
+
+            }
+            if(skateTrick=="BackSide180"){
+
+            }
         }else{
             Log.d("error:", "invalid intent ..");
         }
