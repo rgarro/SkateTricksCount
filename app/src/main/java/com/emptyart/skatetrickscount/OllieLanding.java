@@ -33,10 +33,10 @@ public class OllieLanding extends Activity {
         String skateTrick = "";
         if (getIntent() != null) {
             skateTrick = getIntent().getStringExtra("skate_trick");
-            Log.d("weather_url", skateTrick);
+            Log.d("truco skate", skateTrick);
             Log.d("HERE", "we go! ..");
             if(skateTrick=="Ollie"){
-
+                //increment file and send to trikscountreportactivity
             }
             if(skateTrick=="Flip"){
 
