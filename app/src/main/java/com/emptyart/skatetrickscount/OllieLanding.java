@@ -48,18 +48,13 @@ public class OllieLanding extends Activity {
                     while((line = reader.readLine())!=null){
                         text.append(line);
                     }
-                    Log.d("cuenta de ollies", line);
+                    Log.d("cuenta de ollies",line);
                 } catch(IOException e){
                     e.printStackTrace();
                 }
             }
             if(skateTrick=="Flip"){
-                try{
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("flip.text")));
-
-                } catch(IOException e){
-                    e.printStackTrace();
-                }
+                FileCounterUtils.incrementFileCounter(android.content.context,"flip.txt");
             }
             if(skateTrick=="BackFlip"){
 
