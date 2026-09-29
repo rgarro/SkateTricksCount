@@ -3,6 +3,11 @@ package com.emptyart.skatetrickscount;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  *            |    |    |
  *           )_)  )_)  )_)
@@ -36,7 +41,12 @@ public class OllieLanding extends Activity {
             Log.d("truco skate", skateTrick);
             Log.d("HERE", "we go! ..");
             if(skateTrick=="Ollie"){
-                //increment file and send to trikscountreportactivity
+                try{
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("ollie.text")));
+                    
+                } catch(IOException e){
+                    e.printStackTrace();
+                }
             }
             if(skateTrick=="Flip"){
 
