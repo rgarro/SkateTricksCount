@@ -43,13 +43,23 @@ public class OllieLanding extends Activity {
             if(skateTrick=="Ollie"){
                 try{
                     BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("ollie.text")));
-                    
+                    String line;
+                    StringBuilder text = new StringBuilder();
+                    while((line = reader.readLine())!=null){
+                        text.append(line);
+                    }
+                    Log.d("cuenta de ollies", line);
                 } catch(IOException e){
                     e.printStackTrace();
                 }
             }
             if(skateTrick=="Flip"){
+                try{
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("flip.text")));
 
+                } catch(IOException e){
+                    e.printStackTrace();
+                }
             }
             if(skateTrick=="BackFlip"){
 
