@@ -41,17 +41,18 @@ public class OllieLanding extends Activity {
             Log.d("truco skate", skateTrick);
             Log.d("HERE", "we go! ..");
             if(skateTrick=="Ollie"){
-                try{
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("ollie.text")));
-                    String line;
-                    StringBuilder text = new StringBuilder();
-                    while((line = reader.readLine())!=null){
-                        text.append(line);
-                    }
-                    Log.d("cuenta de ollies",line);
-                } catch(IOException e){
-                    e.printStackTrace();
-                }
+                FileCounterUtils.incrementFileCounter(android.content.context,"ollie.txt");
+               // try{
+                   // BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("ollie.text")));
+                   // String line;
+                   // StringBuilder text = new StringBuilder();
+                  //  while((line = reader.readLine())!=null){
+                 //       text.append(line);
+                   // }
+                 //   Log.d("cuenta de ollies",line);
+                //} catch(IOException e){
+                 //   e.printStackTrace();
+               /// }
             }
             if(skateTrick=="Flip"){
                 FileCounterUtils.incrementFileCounter(android.content.context,"flip.txt");
