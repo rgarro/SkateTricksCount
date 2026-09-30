@@ -58,13 +58,13 @@ public class OllieLanding extends Activity {
                 FileCounterUtils.incrementFileCounter(android.content.context,"flip.txt");
             }
             if(skateTrick=="BackFlip"){
-
+                FileCounterUtils.incrementFileCounter(android.content.context,"backflip.txt");
             }
             if(skateTrick=="FrontSide180"){
-
+                FileCounterUtils.incrementFileCounter(android.content.context,"front.txt");
             }
             if(skateTrick=="BackSide180"){
-
+                FileCounterUtils.incrementFileCounter(android.content.context,"back.txt");
             }
         }else{
             Log.d("error:", "invalid intent ..");
