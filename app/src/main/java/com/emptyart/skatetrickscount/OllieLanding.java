@@ -3,11 +3,11 @@ package com.emptyart.skatetrickscount;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
-
+import android.content.Context;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+import android.content.Intent;
 /**
  *            |    |    |
  *           )_)  )_)  )_)
@@ -40,8 +40,9 @@ public class OllieLanding extends Activity {
             skateTrick = getIntent().getStringExtra("skate_trick");
             Log.d("truco skate", skateTrick);
             Log.d("HERE", "we go! ..");
+            Context context = this;
             if(skateTrick=="Ollie"){
-                FileCounterUtils.incrementFileCounter(android.content.context,"ollie.txt");
+                FileCounterUtils.incrementFileCounter(context,"ollie.txt");
                // try{
                    // BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("ollie.text")));
                    // String line;
@@ -55,17 +56,21 @@ public class OllieLanding extends Activity {
                /// }
             }
             if(skateTrick=="Flip"){
-                FileCounterUtils.incrementFileCounter(android.content.context,"flip.txt");
+                FileCounterUtils.incrementFileCounter(context,"flip.txt");
             }
             if(skateTrick=="BackFlip"){
-                FileCounterUtils.incrementFileCounter(android.content.context,"backflip.txt");
+                FileCounterUtils.incrementFileCounter(context,"backflip.txt");
             }
             if(skateTrick=="FrontSide180"){
-                FileCounterUtils.incrementFileCounter(android.content.context,"front.txt");
+                FileCounterUtils.incrementFileCounter(context,"front.txt");
             }
             if(skateTrick=="BackSide180"){
-                FileCounterUtils.incrementFileCounter(android.content.context,"back.txt");
+                FileCounterUtils.incrementFileCounter(context,"back.txt");
             }
+            //redirecciona a main , tricks report debe ser frangment
+            Intent intent = new Intent(OllieLanding.this,SkateSessActivity.class);
+            //intent.putExtra("skate_trick", spinnerValue);
+            startActivity(intent);
         }else{
             Log.d("error:", "invalid intent ..");
         }
