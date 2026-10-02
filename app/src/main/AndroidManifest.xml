@@ -21,5 +21,6 @@
             android:name=".TricksReportActivity"
             android:label="@string/title_activity_tricks_report"></activity>
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>
