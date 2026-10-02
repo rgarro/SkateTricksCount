@@ -9,4 +9,5 @@
         <item>FrontSide180</item>
         <item>BackSide180</item>
     </string-array>
+    <string name="title_activity_tricks_report">TricksReportActivity</string>
 </resources>

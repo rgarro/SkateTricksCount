@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OllieLanding"></activity>
+        <activity android:name=".OllieLanding" />
+        <activity
+            android:name=".TricksReportActivity"
+            android:label="@string/title_activity_tricks_report"></activity>
     </application>
 
 </manifest>
