@@ -53,6 +53,7 @@ public class FileCounterUtils {
                 if (line != null) {
                     // Parse the string to an integer
                     count = Integer.parseInt(line.trim());
+                    Log.d("TRICK Contando", filename +" - "+ count);
                 }
             }
 
