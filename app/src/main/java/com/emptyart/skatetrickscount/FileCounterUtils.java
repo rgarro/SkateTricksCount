@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import android.util.Log;
+import java.io.File;
 /**
  *            |    |    |
  *           )_)  )_)  )_)
@@ -36,15 +37,25 @@ public class FileCounterUtils {
 
         // 1. Read the current integer from the file
         try {
-            // Open the file from internal storage
-            fis = context.openFileInput(filename);
-            reader = new BufferedReader(new InputStreamReader(fis));
-            String line = reader.readLine();
+            //check if file exist or init file with 0 value
+            //String path = Environment.getExternalStorageDirectory().getPath()
+            File path = context.getFilesDir();
+            Log.d("tricks files path",path.toString());
+            if(!context.getFileStreamPath(filename).exists()){
+                File file = new File(path, filename);
+                count = 0;
+            } else {
+                // Open the file from internal storage
+                fis = context.openFileInput(filename);
+                reader = new BufferedReader(new InputStreamReader(fis));
+                String line = reader.readLine();
 
-            if (line != null) {
-                // Parse the string to an integer
-                count = Integer.parseInt(line.trim());
+                if (line != null) {
+                    // Parse the string to an integer
+                    count = Integer.parseInt(line.trim());
+                }
             }
+
         } catch (Exception e) {
             // If file doesn't exist or is empty, count remains 0
             e.printStackTrace();
@@ -70,7 +81,9 @@ public class FileCounterUtils {
             writer = new OutputStreamWriter(fos);
             writer.write(String.valueOf(count));
             writer.flush();
+            Log.d("CONTO EL TRICK!!", filename +" - "+ count);
         } catch (Exception e) {
+            Log.d("NO GUARDO EL FILE!!", e.toString());
             e.printStackTrace();
         } finally {
             // Safely close writing streams
