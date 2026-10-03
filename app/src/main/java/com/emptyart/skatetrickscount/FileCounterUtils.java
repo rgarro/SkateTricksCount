@@ -37,13 +37,13 @@ public class FileCounterUtils {
 
         // 1. Read the current integer from the file
         try {
-            //check if file exist or init file with 0 value
+
             //String path = Environment.getExternalStorageDirectory().getPath()
             File path = context.getFilesDir();
             Log.d("tricks files path",path.toString());
+            //check if file exist or init file with 0 value
             if(!context.getFileStreamPath(filename).exists()){
                 File file = new File(path, filename);
-                count = 0;
             } else {
                 // Open the file from internal storage
                 fis = context.openFileInput(filename);
