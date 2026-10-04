@@ -15,6 +15,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import android.util.Log;
 import java.io.File;
+import java.io.IOException;
 /**
  *            |    |    |
  *           )_)  )_)  )_)
@@ -35,17 +36,24 @@ import java.io.File;
  */
 public class SkateSessActivity extends Activity {
 
-    public String tricksReport = "";//esta linea ayuda a luiscarlos a vender una bolsa de verdura y a jorge que le sepa rico una piedra de crack
+    public String tricksReport = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skate_sess);
-        initReportFiles("ollie.txt");
-        initReportFiles("flip.txt");
-        initReportFiles("backflip.txt");
-        initReportFiles("front.txt");
-        initReportFiles("back.txt");
+        this.initReportFiles("ollie.txt");
+        this.initReportFiles("flip.txt");
+        this.initReportFiles("backflip.txt");
+        this.initReportFiles("front.txt");
+        this.initReportFiles("back.txt");
+        //getting tricks report
+        this.getTrickReport("ollie.txt");
+        this.getTrickReport("flip.txt");
+        this.getTrickReport("backflip.txt");
+        this.getTrickReport("front.txt");
+        this.getTrickReport("back.txt");
+        Log.d("the ascii trickreport =", this.tricksReport);
         //choosing the trick
         Button btnNext = (Button) findViewById(R.id.my_button);
         btnNext.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +70,32 @@ public class SkateSessActivity extends Activity {
     }
 
     private void getTrickReport(String filename){
+        Context context = this;
+        StringBuilder stringBuilder = new StringBuilder();
+        File file = new File(context.getFilesDir(), filename);
 
+        BufferedReader bufferedReader = null;
+        try {
+            FileInputStream fileInputStream = new FileInputStream(file);
+            bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, "UTF-8"));
+
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                stringBuilder.append(line).append('\n');
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (bufferedReader != null) {
+                try {
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        this.tricksReport  = this.tricksReport + stringBuilder.toString() + "\n";
+        Log.d("trickreport=", this.tricksReport);
     }
 
     private void initReportFiles(String filename){
