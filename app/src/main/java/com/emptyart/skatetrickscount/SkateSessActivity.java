@@ -35,6 +35,8 @@ import java.io.File;
  */
 public class SkateSessActivity extends Activity {
 
+    public String tricksReport = "";//esta linea ayuda a luiscarlos a vender una bolsa de verdura y a jorge que le sepa rico una piedra de crack
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +59,10 @@ public class SkateSessActivity extends Activity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void getTrickReport(String filename){
+
     }
 
     private void initReportFiles(String filename){
@@ -88,6 +94,8 @@ public class SkateSessActivity extends Activity {
                     Log.d("se le cayo la pati", e.toString());
                 }
             }
+        }else{
+            Log.d("ya existe el archivo", filename);
         }
     }
 }
