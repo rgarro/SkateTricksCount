@@ -14,6 +14,8 @@ import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import android.util.Log;
+import android.widget.TextView;
+
 import java.io.File;
 import java.io.IOException;
 /**
@@ -54,6 +56,8 @@ public class SkateSessActivity extends Activity {
         this.getTrickReport("front.txt");
         this.getTrickReport("back.txt");
         Log.d("the ascii trickreport =", this.tricksReport);
+        TextView reportView = findViewById(R.id.textView);
+        reportView.setText(this.tricksReport);
         //choosing the trick
         Button btnNext = (Button) findViewById(R.id.my_button);
         btnNext.setOnClickListener(new View.OnClickListener() {
