@@ -50,11 +50,11 @@ public class SkateSessActivity extends Activity {
         this.initReportFiles("front.txt");
         this.initReportFiles("back.txt");
         //getting tricks report
-        this.getTrickReport("ollie.txt");
-        this.getTrickReport("flip.txt");
-        this.getTrickReport("backflip.txt");
-        this.getTrickReport("front.txt");
-        this.getTrickReport("back.txt");
+        this.getTrickReport("ollie.txt","Ollie");
+        this.getTrickReport("flip.txt","Flip");
+        this.getTrickReport("backflip.txt","BackFlip");
+        this.getTrickReport("front.txt","FrontSide");
+        this.getTrickReport("back.txt","BackSide");
         Log.d("the ascii trickreport =", this.tricksReport);
         TextView reportView = findViewById(R.id.textView);
         reportView.setText(this.tricksReport);
@@ -73,7 +73,7 @@ public class SkateSessActivity extends Activity {
         });
     }
 
-    private void getTrickReport(String filename){
+    private void getTrickReport(String filename,String trickname){
         Context context = this;
         StringBuilder stringBuilder = new StringBuilder();
         File file = new File(context.getFilesDir(), filename);
@@ -98,7 +98,7 @@ public class SkateSessActivity extends Activity {
                 }
             }
         }
-        this.tricksReport  = this.tricksReport + stringBuilder.toString() + "\n";
+        this.tricksReport  = this.tricksReport + trickname + " " +stringBuilder.toString() + "\n";
         Log.d("trickreport=", this.tricksReport);
     }
 
