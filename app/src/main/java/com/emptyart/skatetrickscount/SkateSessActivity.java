@@ -38,7 +38,7 @@ import java.io.IOException;
  */
 public class SkateSessActivity extends Activity {
 
-    public String tricksReport = "";
+    public String tricksReport = "\n Tricks Count \n";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +104,6 @@ public class SkateSessActivity extends Activity {
 
     private void initReportFiles(String filename){
         Context context = this;
-        //String filename = "ollie.txt";
         File path = context.getFilesDir();
         int count = 0;
 

@@ -43,17 +43,6 @@ public class OllieLanding extends Activity {
             Context context = this;
             if(skateTrick=="Ollie"){
                 FileCounterUtils.incrementFileCounter(context,"ollie.txt");
-               // try{
-                   // BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("ollie.text")));
-                   // String line;
-                   // StringBuilder text = new StringBuilder();
-                  //  while((line = reader.readLine())!=null){
-                 //       text.append(line);
-                   // }
-                 //   Log.d("cuenta de ollies",line);
-                //} catch(IOException e){
-                 //   e.printStackTrace();
-               /// }
             }
             if(skateTrick=="Flip"){
                 FileCounterUtils.incrementFileCounter(context,"flip.txt");
